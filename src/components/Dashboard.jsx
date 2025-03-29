@@ -1,11 +1,11 @@
 import React from 'react'
-import Navbar from './navbar'
-import About from './about'
-import Portfolio from './portfolio'
-import Experience from './experience'
-import Resume from './resume'
-import Contact from './contact'
-import Home from './Home'
+import Navbar from './Navbar.jsx'
+import About from './About.jsx'
+import Portfolio from './Portfolio.jsx'
+import Experience from './Experience.jsx'
+import Resume from './Resume.jsx'
+import Contact from './Contact.jsx'
+import Home from './Home.jsx'
 
 export default function Dashboard() {
     return (
