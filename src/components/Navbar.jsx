@@ -64,7 +64,7 @@ export default function Navbar() {
             <img
               src="/loog-hcb.png"
               alt="HCB Logo"
-              className="h-12 w-auto inline-block"
+              className="h-8 w-auto inline-block"
             />
           </span>
         </Link>
