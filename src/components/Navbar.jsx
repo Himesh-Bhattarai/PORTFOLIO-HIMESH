@@ -62,7 +62,7 @@ export default function Navbar() {
         <Link to="/home" className="flex items-center">
           <span className="inline-block">
             <img
-              src="\public\loog-hcb.png"
+              src="/loog-hcb.png"
               alt="HCB Logo"
               className="h-12 w-auto inline-block"
             />
