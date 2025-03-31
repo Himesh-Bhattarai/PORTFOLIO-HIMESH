@@ -60,25 +60,12 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
         <Link to="/home" className="flex items-center">
-          <span
-            className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300"
-            style={{
-              fontFamily: "Magneto, sans-serif",
-              letterSpacing: "4px",
-              fontStyle: "italic",
-              display: "inline-block",
-              padding: "10px 20px",
-              borderRadius: "10px",
-              position: "relative",
-              overflow: "hidden",
-              textShadow: "4px 4px 8px rgba(255, 255, 255, 0.3)", // Glow effect
-              WebkitTextStroke: "1px rgba(255, 255, 255, 0.2)", // Sharp edges
-              transition: "transform 0.3s ease-in-out",
-            }}
-            onMouseEnter={(e) => (e.target.style.transform = "scale(1.1)")}
-            onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
-          >
-            HCB
+          <span className="inline-block">
+            <img
+              src="\public\loog-hcb.png"
+              alt="HCB Logo"
+              className="h-12 w-auto inline-block"
+            />
           </span>
         </Link>
 
