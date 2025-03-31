@@ -61,14 +61,19 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
         <Link to="/home" className="flex items-center">
           <span
-            className="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600 magneto-font"
+            className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300"
             style={{
               fontFamily: "Magneto, sans-serif",
-              letterSpacing: "3px",
+              letterSpacing: "4px",
               fontStyle: "italic",
-              textShadow: "3px 3px 5px rgba(0, 0, 0, 0.3)", // Soft shadow
-              WebkitTextStroke: "1px rgba(0, 0, 0, 0.2)", // Subtle outline
-              transition: "transform 0.3s ease-in-out", // Smooth effect
+              display: "inline-block",
+              padding: "10px 20px",
+              borderRadius: "10px",
+              position: "relative",
+              overflow: "hidden",
+              textShadow: "4px 4px 8px rgba(255, 255, 255, 0.3)", // Glow effect
+              WebkitTextStroke: "1px rgba(255, 255, 255, 0.2)", // Sharp edges
+              transition: "transform 0.3s ease-in-out",
             }}
             onMouseEnter={(e) => (e.target.style.transform = "scale(1.1)")}
             onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
