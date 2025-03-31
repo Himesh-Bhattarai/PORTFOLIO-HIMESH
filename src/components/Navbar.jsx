@@ -61,8 +61,17 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
         <Link to="/home" className="flex items-center">
           <span
-            className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600 magneto-font"
-            style={{ fontFamily: "Magneto", letterSpacing: "2px", fontStyle: "italic" }}
+            className="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600 magneto-font"
+            style={{
+              fontFamily: "Magneto, sans-serif",
+              letterSpacing: "3px",
+              fontStyle: "italic",
+              textShadow: "3px 3px 5px rgba(0, 0, 0, 0.3)", // Soft shadow
+              WebkitTextStroke: "1px rgba(0, 0, 0, 0.2)", // Subtle outline
+              transition: "transform 0.3s ease-in-out", // Smooth effect
+            }}
+            onMouseEnter={(e) => (e.target.style.transform = "scale(1.1)")}
+            onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
           >
             HCB
           </span>
