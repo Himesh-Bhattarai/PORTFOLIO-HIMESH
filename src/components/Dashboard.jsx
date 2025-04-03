@@ -6,6 +6,7 @@ import Experience from './Experience.jsx'
 import Resume from './Resume.jsx'
 import Contact from './Contact.jsx'
 import Home from './Home.jsx'
+import Footer from './Footer.jsx'
 
 export default function Dashboard() {
     return (
@@ -17,6 +18,7 @@ export default function Dashboard() {
             <Experience />
             <Resume />
             <Contact />
+            <Footer />
         </>
     )
 }
