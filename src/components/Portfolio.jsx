@@ -13,7 +13,7 @@ export default function Portfolio() {
     {
       title: "Interactive Product Viewer",
       description: "A 3D product configurator for an e-commerce platform.",
-      image: "/portfolio.png.png?height=600&width=800",
+      image: "/fav-con.png?height=600&width=800",
       tags: ["Three.js", "Next.js", "Framer Motion"],
     },
     {
