@@ -7,25 +7,25 @@ export default function Portfolio() {
     {
       title: "3D Model Generator",
       description: "A web-based tool for creating and customizing 3D models in real-time.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/portfolio.png?height=600&width=800",
       tags: ["Three.js", "WebGL", "React"],
     },
     {
       title: "Interactive Product Viewer",
       description: "A 3D product configurator for an e-commerce platform.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/portfolio.png.png?height=600&width=800",
       tags: ["Three.js", "Next.js", "Framer Motion"],
     },
     {
       title: "Virtual Gallery Experience",
       description: "An immersive virtual art gallery with realistic lighting and navigation.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/portfolio.png?height=800&width=600",
       tags: ["WebGL", "GLSL", "React Three Fiber"],
     },
     {
       title: "Architectural Visualization",
       description: "Interactive 3D visualizations for architectural projects.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/portfolio.png?height=800&width=600",
       tags: ["Blender", "Three.js", "TypeScript"],
     },
   ]
@@ -46,7 +46,7 @@ export default function Portfolio() {
             >
               <div className="relative h-64 overflow-hidden">
                 <img
-                  src={project.image || "/placeholder.svg"}
+                  src={project.image}
                   alt={project.title}
                   
                   className="object-cover transition-transform duration-500 group-hover:scale-110"

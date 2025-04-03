@@ -17,7 +17,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div className="relative">
             <div className="relative h-[450px] w-full rounded-lg overflow-hidden shadow-xl">
-              <img src="/about-secctio-pic.png?height=900&width=600" alt="Profile" className="object-cover" />
+              <img src="/about-setion-pic.png?height=1000&width=600" alt="Profile" className="object-cover" />
               {/* Smoke Effect Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
 
