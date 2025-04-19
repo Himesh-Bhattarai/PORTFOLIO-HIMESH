@@ -5,28 +5,28 @@ import { ExternalLink } from "lucide-react"
 export default function Portfolio() {
   const projects = [
     {
-      title: "3D Model Generator",
-      description: "A web-based tool for creating and customizing 3D models in real-time.",
-      image: "/portfolio.png?height=600&width=800",
-      tags: ["Three.js", "WebGL", "React"],
+      title: "First Portfolio Website",
+      description: "Portfolio website to show my skill.",
+      image: "/first-portfolio.png?height=600&width=800",
+      tags: ["Tailwind CSS", "React"],
     },
     {
-      title: "Interactive Product Viewer",
-      description: "A 3D product configurator for an e-commerce platform.",
+      title: "Helmet Head Nepal ",
+      description: "E-commerce Website about helmet & motorcycle accesories.",
       image: "/fav-con.png?height=600&width=800",
-      tags: ["Three.js", "Next.js", "Framer Motion"],
+      tags: ["Three.js", "Next.js", "React.JS", "Express", "Node.JS", "Tailwind CSS"],
     },
     {
-      title: "Virtual Gallery Experience",
-      description: "An immersive virtual art gallery with realistic lighting and navigation.",
+      title: "HerbalWisdom",
+      description: "Detailed Description of Herbal. Like User, purpos, sideeffect, advantages etc",
       image: "/portfolio.png?height=800&width=600",
-      tags: ["WebGL", "GLSL", "React Three Fiber"],
+      tags: [ "Next.js", "React.JS", "Tailwind CSS", "Typescript"],
     },
     {
-      title: "Architectural Visualization",
-      description: "Interactive 3D visualizations for architectural projects.",
+      title: "NP REVOLUTION",
+      description: "NP REVOLUTION is an independent Nepali news platform exposing corruption, delivering honest journalism, and empowering citizens with real-time updates and simplified news summaries.",
       image: "/portfolio.png?height=800&width=600",
-      tags: ["Blender", "Three.js", "TypeScript"],
+      tags: ["Next.JS" , "React.JS" ,"TailwindCss" , "EXpress", "Node JS", "TypeScript"],
     },
   ]
 
