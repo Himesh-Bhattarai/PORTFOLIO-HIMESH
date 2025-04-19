@@ -7,7 +7,7 @@ export default function Resume() {
   const skills = [
     {
       category: "Technical Skills",
-      items: ["React JS", "HTML", "CSS", "Javascript", "Node", "MongoBD", "Express"],
+      items: ["React JS", "HTML", "CSS", "Javascript", "Node JS", "MongoBD", "Express", "Typescript", "Next JS", "Tailwind CSS"],
       icon: Code,
       color: "bg-gradient-to-r from-blue-500 to-cyan-400"
     },
@@ -27,11 +27,11 @@ export default function Resume() {
 
   const education = [
     {
-      degree: "Bachelor of Computer Applications (BCA)",
-      institution: "Xavier International College",
+      degree: "Bachelor of Computer Applications (BCA)--Tamplat",
+      institution: "Xavier International College-- Random",
       period: "Present",
       description: "Currently pursuing degree in Computer Applications",
-      gpa: ""
+      gpa: " "
     },
     {
       degree: "+2, Computer Management",
@@ -57,8 +57,8 @@ export default function Resume() {
       icon: Star
     },
     {
-      name: "CS50 Introduction to Python",
-      issuer: "Harvard University",
+      name: "CS50 Introduction to Python Programming Language",
+      issuer: "Harvard University CS50",
       year: "Recent",
       icon: Award
     },
