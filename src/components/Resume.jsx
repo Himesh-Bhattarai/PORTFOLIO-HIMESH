@@ -7,7 +7,7 @@ export default function Resume() {
   const skills = [
     {
       category: "Technical Skills",
-      items: ["React JS", "HTML", "CSS", "Javascript", "Node JS", "MongoBD", "Express", "Typescript", "Next JS", "Tailwind CSS"],
+      items: ["React JS", "HTML", "CSS", "Javascript", "Node JS", "MongoBD", "Express", "Typescript", "Next JS", "Tailwind CSS", "git & github"],
       icon: Code,
       color: "bg-gradient-to-r from-blue-500 to-cyan-400"
     },
