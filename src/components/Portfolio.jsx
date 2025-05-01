@@ -63,9 +63,11 @@ export default function Portfolio() {
                     </span>
                   ))}
                 </div>
-                <Button target={project.link} variant="outline" size="sm" className="gap-2">
-                  View Project <ExternalLink className="h-4 w-4" />
-                </Button>
+                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" size="sm" className="gap-2">
+                    View Project <ExternalLink className="h-4 w-4" />
+                  </Button>
+                </a>
               </CardContent>
             </Card>
           ))}
