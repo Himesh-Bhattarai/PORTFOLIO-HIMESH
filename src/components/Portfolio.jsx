@@ -9,6 +9,7 @@ export default function Portfolio() {
       description: "Portfolio website to show my skill.",
       image: "/first-portfolio.png?height=600&width=800",
       tags: ["Tailwind CSS", "React"],
+      link: "https://portfolio-hcb.vercel.app"
     },
     {
       title: "Helmet Head Nepal ",
@@ -25,7 +26,7 @@ export default function Portfolio() {
     {
       title: "NP REVOLUTION",
       description: "NP REVOLUTION is an independent Nepali news platform exposing corruption, delivering honest journalism, and empowering citizens with real-time updates and simplified news summaries.",
-      image: "/portfolio.png?height=800&width=600",
+      image: "/nprevolution.png?height=800&width=600",
       tags: ["Next.JS" , "React.JS" ,"TailwindCss" , "EXpress", "Node JS", "TypeScript"],
     },
   ]
@@ -62,7 +63,7 @@ export default function Portfolio() {
                     </span>
                   ))}
                 </div>
-                <Button variant="outline" size="sm" className="gap-2">
+                <Button target={project.link} variant="outline" size="sm" className="gap-2">
                   View Project <ExternalLink className="h-4 w-4" />
                 </Button>
               </CardContent>
