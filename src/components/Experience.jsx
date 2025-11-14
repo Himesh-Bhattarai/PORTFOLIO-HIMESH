@@ -5,51 +5,59 @@ import { Briefcase, Calendar, MapPin, CheckCircle2, Award, Users, Zap } from "lu
 export default function Experience() {
   const experiences = [
     {
-      period: "2021 - Present",
-      title: "Senior 3D Developer",
-      company: "Hyper3D Technologies",
-      location: "San Francisco, CA",
-      description: "Leading the development of web-based 3D visualization tools and interactive experiences.",
+      period: "2024 – Present",
+      title: "Full-Stack Developer (Self-Driven Projects)",
+      company: "Personal & Open-Source Projects",
+      location: "Lalitpur, Nepal",
+      description:
+        "Building full-stack applications and tools while learning advanced backend and DevOps concepts.",
       achievements: [
-        "Developed a real-time 3D model generator that increased user engagement by 45%",
-        "Led a team of 5 developers to deliver projects on time and within budget",
-        "Optimized rendering performance resulting in 60% faster load times",
+        "Created the Freakend CLI tool that auto-generates production-ready backend structure",
+        "Implemented JWT-based authentication including login, refresh token, switch account, and multi-device logout",
+        "Developed multiple frontend projects using React and Next.js with clean UI design",
+        "Explored Docker, GitHub Actions, and CI/CD automation for backend deployment",
       ],
-      skills: ["Three.js", "WebGL", "React", "TypeScript"],
+      skills: ["Node.js", "Express", "MongoDB", "React", "Next.js", "JavaScript", "Python", "DevOps Basics"],
       icon: Zap,
       color: "from-blue-500 to-cyan-400",
     },
+
     {
-      period: "2018 - 2021",
-      title: "3D Graphics Engineer",
-      company: "Virtual Spaces Inc.",
-      location: "Seattle, WA",
-      description: "Developed immersive 3D environments and optimized rendering performance for web applications.",
+      period: "2023 – 2024",
+      title: "Frontend Developer (Freelance / Practice Projects)",
+      company: "Self-Employed",
+      location: "Kathmandu, Nepal",
+      description:
+        "Built responsive and interactive web interfaces and improved frontend development skills.",
       achievements: [
-        "Created a custom shader library that reduced development time by 30%",
-        "Implemented WebGL-based visualization tools for architectural clients",
-        "Contributed to open-source 3D rendering projects",
+        "Developed portfolio websites, landing pages, and UI components",
+        "Created reusable component structures with clean architecture",
+        "Implemented form validations, authentication UI, and API integrations",
+        "Improved UI/UX with animations and modern design patterns",
       ],
-      skills: ["WebGL", "GLSL", "JavaScript", "Blender"],
+      skills: ["React", "JavaScript", "CSS", "Tailwind", "HTML"],
       icon: Award,
       color: "from-purple-500 to-indigo-500",
     },
+
     {
-      period: "2016 - 2018",
-      title: "Frontend Developer",
-      company: "Creative Digital Agency",
-      location: "Austin, TX",
-      description: "Created interactive web experiences with a focus on animation and visual effects.",
+      period: "2022 – 2023",
+      title: "Technical Intern / Learner",
+      company: "Learning Phase",
+      location: "Nepal",
+      description:
+        "Studied programming fundamentals and built small applications to strengthen logic and problem-solving.",
       achievements: [
-        "Designed and implemented interactive data visualizations for Fortune 500 clients",
-        "Developed custom animation libraries that improved site performance",
-        "Mentored junior developers in advanced CSS and JavaScript techniques",
+        "Completed C, Python, and basic data structures projects",
+        "Built small apps like todo app, notes app, and basic CRUD APIs",
+        "Learned Git, GitHub, version control basics",
       ],
-      skills: ["HTML","JavaScript", "CSS", "NODE.JS","React", "Python"],
+      skills: ["C", "Python", "Git", "Problem Solving"],
       icon: Users,
       color: "from-amber-500 to-orange-500",
     },
-  ]
+  ];
+
 
   return (
     <section id="experience" className="py-20 px-4 bg-white dark:bg-zinc-950">
