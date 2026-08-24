@@ -2,141 +2,16 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function Resume({ data }) {
-
   const profile = {
-  skills: [
-    {
-      category: "Frontend",
-      items: [
-        "React",
-        "Next.js",
-        "JavaScript",
-        "TypeScript",
-        "Tailwind CSS",
-        "Framer Motion",
-        "HTML5",
-        "CSS3"
-      ]
-    },
-
-    {
-      category: "Backend",
-      items: [
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "REST API",
-        "JWT Authentication",
-        "Role-Based Access Control",
-        "Mongoose"
-      ]
-    },
-
-    {
-      category: "AI & Modern Development",
-      items: [
-        "LLM Integration",
-        "RAG",
-        "MCP",
-        "Ollama",
-        "Prompt Engineering",
-        "AI API Integration"
-      ]
-    },
-
-    {
-      category: "DevOps & Tools",
-      items: [
-        "Git",
-        "GitHub",
-        "Docker",
-        "GitHub Actions",
-        "Postman",
-        "VS Code"
-      ]
-    },
-
-    {
-      category: "Soft Skills",
-      items: [
-        "Problem Solving",
-        "Critical Thinking",
-        "Communication",
-        "Team Collaboration",
-        "Analytical Thinking",
-        "Continuous Learning"
-      ]
-    }
-  ],
-
-  education: [
-    {
-      degree: "Bachelor of Computer Applications (BCA)",
-      institution: "Xavier International College",
-      university: "Tribhuvan University",
-      period: "2023 – Present",
-      description:
-        "Studying computer science fundamentals, software engineering, databases, networking, algorithms, and modern web technologies."
-    },
-
-    {
-      degree: "+2 in Computer Management",
-      institution: "Orchid Public Secondary School",
-      period: "Completed",
-      gpa: "3.09",
-      description:
-        "Focused on computer science, programming fundamentals, mathematics, and business studies."
-    },
-
-    {
-      degree: "Secondary Education Examination (SEE)",
-      institution: "Sunshine English Boarding School",
-      period: "Completed",
-      gpa: "3.60"
-    }
-  ],
-
-  certifications: [
-    {
-      name: "CS50's Introduction to Computer Science",
-      issuer: "Harvard University",
-      year: "2024"
-    },
-
-    {
-      name: "CS50's Introduction to Programming with Python",
-      issuer: "Harvard University",
-      year: "2025"
-    },
-
-    {
-      name: "Front End Development Libraries",
-      issuer: "freeCodeCamp",
-      year: "2025"
-    }
-  ],
-
-  languages: [
-    {
-      name: "Nepali",
-      proficiency: "Native"
-    },
-
-    {
-      name: "English",
-      proficiency: "Professional Working"
-    },
-
-    {
-      name: "Hindi",
-      proficiency: "Professional Working"
-    }
-  ]
-};
+    skills: data?.skills || [],
+    education: data?.education || [],
+    certifications: data?.certifications || [],
+    languages: data?.languages || [],
+  };
 
   return (
-    <section id="resume" className="px-6 py-20 border-b border-[--line] bg-[--page-bg] text-[--page-fg]">
-      <div className="max-w-6xl mx-auto space-y-10">
+    <section id="resume" className="px-6 lg:px-12 xl:px-16 py-20 border-b border-[--line] bg-[--page-bg] text-[--page-fg]">
+      <div className="max-w-[1440px] mx-auto space-y-10">
         <header className="flex flex-col gap-3">
           <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[--line] bg-[--chip-bg] px-3 py-1 text-xs font-mono text-[--muted]">
            Skills & Qualifications

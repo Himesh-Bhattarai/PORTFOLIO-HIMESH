@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -31,7 +33,7 @@ export default function Navbar({ data }) {
         scrolled ? 'bg-[rgba(11,11,15,0.9)] backdrop-blur border-b border-[--line]' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-8 xl:px-12 h-16 flex items-center justify-between">
         <button
           onClick={() => scrollTo('hero')}
           className="flex items-center gap-2 text-sm font-semibold tracking-tight"

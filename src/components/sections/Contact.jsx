@@ -1,39 +1,61 @@
-﻿import React, { useState } from 'react';
+﻿'use client';
+
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 
-export default function Contact() {
- 
+export default function Contact({ data }) {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [sent, setSent] = useState(false);
-  
-  
-    const contact = {
-    email: "himesh.hcb@gmail.com",
-    phone: "+977 9806352021",
-    location: "Kathmandu, Nepal",
-    
-  }
-  
+  const [status, setStatus] = useState('idle'); // idle | sending | sent | error
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const contact = {
+    email: data?.email || "",
+    phone: data?.phone || "",
+    location: data?.location || "",
+  };
 
   const handleChange = (e) => {
-
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
-    setForm({ name: '', email: '', message: '' });
+    setStatus('sending');
+    setErrorMessage('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          subject: `Portfolio contact from ${form.name}`,
+          message: form.message,
+        }),
+      });
+      const json = await res.json();
+
+      if (!res.ok || !json.success) {
+        throw new Error(json.message || 'Failed to send message.');
+      }
+
+      setStatus('sent');
+      setForm({ name: '', email: '', message: '' });
+      setTimeout(() => setStatus('idle'), 5000);
+    } catch (err) {
+      setStatus('error');
+      setErrorMessage(err.message || 'Something went wrong. Please try again.');
+    }
   };
 
   return (
-    <section id="contact" className="px-6 py-20 bg-[--panel] text-[--page-fg]">
-      <div className="max-w-6xl mx-auto grid gap-10 md:grid-cols-[1.1fr_0.9fr] items-start">
+    <section id="contact" className="px-6 lg:px-12 xl:px-16 py-20 bg-[--panel] text-[--page-fg]">
+      <div className="max-w-[1440px] mx-auto grid gap-10 md:grid-cols-[1.1fr_0.9fr] items-start">
         <div className="space-y-4">
           <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[--line] bg-[--chip-bg] px-3 py-1 text-xs font-mono text-[--muted]">
             Let's Connect
@@ -92,11 +114,17 @@ export default function Contact() {
               required
               className="bg-transparent border-[--line] min-h-[140px] focus-visible:ring-[--accent]"
             />
-            <div className="flex items-center justify-between">
-              <Button type="submit" className="gap-2">
-                Send Message  <ArrowRight className="h-4 w-4" />
+            <div className="flex items-center justify-between gap-3">
+              <Button type="submit" className="gap-2" disabled={status === 'sending'}>
+                {status === 'sending' ? 'Sending…' : 'Send Message'}
+                {status !== 'sending' && <ArrowRight className="h-4 w-4" />}
               </Button>
-              {sent && <span className="text-xs text-[--muted]">Message queued. I’ll reply shortly.</span>}
+              {status === 'sent' && (
+                <span className="text-xs text-[--accent]">Sent — I'll reply shortly.</span>
+              )}
+              {status === 'error' && (
+                <span className="text-xs text-red-400">{errorMessage}</span>
+              )}
             </div>
           </form>
         </div>

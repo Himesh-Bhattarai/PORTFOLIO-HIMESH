@@ -4,153 +4,18 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
 export default function Work({ data }) {
-  const list = data && Array.isArray(data) ? data : [];
+  const raw = data && Array.isArray(data) ? data : [];
+  // Flagship work first: real live deployments + featured, then featured,
+  // then the rest — so the strongest evidence gets first attention instead
+  // of a flat, undifferentiated grid.
+  const projects = [...raw].sort((a, b) => {
+    const score = (p) => (p.featured ? 1 : 0) + (p.link ? 1 : 0);
+    return score(b) - score(a);
+  });
 
-  const projects = [
-  {
-    slug: "ai-ecommerce",
-    title: "AI Integrated E-Commerce",
-
-    description:
-      "A full-stack AI-powered e-commerce platform featuring intelligent product search, AI chatbot, review summarization, FAQ generation, seller dashboards, authentication, and modern commerce workflows.",
-
-    image: "/projects/ai-ecommerce.png",
-
-    tags: [
-      "Next.js",
-      "TypeScript",
-      "MongoDB",
-      "Node.js",
-      "AI",
-      "RAG"
-    ],
-
-    featured: true,
-
-    link: "",
-
-    code: ""
-  },
-
-  {
-    slug: "contentflow",
-    title: "ContentFlow CMS",
-
-    description:
-      "A modern headless CMS with role-based authentication, dynamic content management, reusable APIs, media handling, and scalable architecture.",
-
-    image: "/projects/contentflow.png",
-
-    tags: [
-      "React",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "JWT"
-    ],
-
-    featured: true,
-
-    link: "",
-
-    code: ""
-  },
-  {
-    slug: "stroid",
-    title: "Stroid",
-
-    description:
-      "A deterministic React state management library supporting configurable store authority, predictable hydration, and drift detection for modern React applications.",
-
-    image: "/projects/stroid.png",
-
-    tags: [
-      "React",
-      "TypeScript",
-      "Library",
-      "NPM"
-    ],
-
-    featured: true,
-
-    link: "",
-
-    code: ""
-  },
-
-  {
-    slug: "portfolio-v2",
-    title: "Portfolio v2",
-
-    description:
-      "Personal portfolio built with React and modern UI architecture, designed to evolve into an AI-powered portfolio where an assistant can manage content through structured APIs and automation.",
-
-    image: "/projects/portfolio-v2.png",
-
-    tags: [
-      "React",
-      "Vite",
-      "Tailwind",
-      "Framer Motion"
-    ],
-
-    featured: true,
-
-    link: "",
-
-    code: ""
-  },
-
-
-  {
-    slug: "helmet-head",
-    title: "Helmet Head Nepal",
-
-    description:
-      "A modern e-commerce experience for motorcycle helmets featuring responsive layouts, smooth shopping flows, and interactive product presentation.",
-
-    image: "/projects/helmet-head.png",
-
-    tags: [
-      "Next.js",
-      "Three.js",
-      "Express",
-      "Tailwind"
-    ],
-
-    featured: false,
-
-    link: "",
-
-    code: ""
-  },
-
-  {
-    slug: "nprevolution",
-    title: "NP Revolution",
-
-    description:
-      "An independent Nepali news platform delivering categorized news, dynamic content, and a clean reading experience.",
-
-    image: "/projects/nprevolution.png",
-
-    tags: [
-      "Next.js",
-      "TypeScript",
-      "MongoDB"
-    ],
-
-    featured: false,
-
-    link: "",
-
-    code: ""
-  }
-
-  ]
   return (
-    <section id="work" className="px-6 py-20 border-b border-[--line] bg-[--panel] text-[--page-fg]">
-      <div className="max-w-6xl mx-auto space-y-10">
+    <section id="work" className="px-6 lg:px-12 xl:px-16 py-20 border-b border-[--line] bg-[--panel] text-[--page-fg]">
+      <div className="max-w-[1440px] mx-auto space-y-10">
         <header className="flex flex-col gap-3">
           <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[--line] bg-[--chip-bg] px-3 py-1 text-xs font-mono text-[--muted]">
             Selected work
@@ -163,13 +28,15 @@ export default function Work({ data }) {
           </div>
         </header>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project) => {
             const tags = project.tags || [];
             return (
             <Card
               key={project.title}
-              className="group border-[--line] bg-[--card] transition-transform duration-200 hover:-translate-y-1"
+              className={`group border-[--line] bg-[--card] transition-transform duration-200 hover:-translate-y-1 ${
+                project.featured ? 'ring-1 ring-[--accent]/40' : ''
+              }`}
             >
               <Link href={`/projects/${project.slug}`} className="block">
                 <div className="relative overflow-hidden border-b border-[--line]">
@@ -179,6 +46,19 @@ export default function Work({ data }) {
                     className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
+                  <div className="absolute top-3 left-3 flex gap-2">
+                    {project.link && (
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-black/60 backdrop-blur px-2.5 py-1 text-[10px] font-mono uppercase tracking-wide text-white border border-white/10">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[--accent] animate-pulse" />
+                        Live
+                      </span>
+                    )}
+                    {project.featured && (
+                      <span className="inline-flex items-center rounded-full bg-[--accent] px-2.5 py-1 text-[10px] font-mono uppercase tracking-wide text-black">
+                        Featured
+                      </span>
+                    )}
+                  </div>
                 </div>
               </Link>
               <CardContent className="space-y-4 p-6">

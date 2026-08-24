@@ -20,7 +20,7 @@ export default function Dashboard({ content }) {
         <Work data={content.projects} />
         {has('Experience') && <Experience data={content.experience} />}
         <About data={content.about} />
-        <Resume data={content.resume} />
+        <Resume data={content.profile} />
         <Contact data={content.contact} />
       </main>
       <Footer

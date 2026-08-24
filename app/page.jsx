@@ -1,7 +1,12 @@
-'use client';
+import connectDB from '@/lib/connectDB';
+import Content from '@/models/content';
+import Dashboard from '@/components/Dashboard';
 
-import App from '@/App';
+export const dynamic = 'force-dynamic';
 
-export default function Page() {
-  return <App />;
+export default async function Page() {
+  await connectDB();
+  const content = await Content.findOne().lean();
+
+  return <Dashboard content={content} />;
 }

@@ -1,47 +1,17 @@
 ﻿export default function About({ data }) {
-
-
-const aboutContent = {
-  headline: "Building modern software with full-stack expertise and AI innovation.",
-
-  paragraphs: [
-    "I'm Himeshchanchal Bhattarai, a Full Stack Developer based in Kathmandu, Nepal, with professional experience building modern web applications using React, Next.js, Node.js, TypeScript, and MongoDB. I enjoy transforming ideas into scalable, maintainable software with a strong focus on clean architecture, performance, and user experience.",
-
-    "Over the past year, I've built full-stack applications ranging from AI-powered platforms and content management systems to e-commerce solutions and developer tools. While full-stack development is my foundation, I'm actively specializing in AI engineering, exploring local LLMs, AI agents, MCP, and intelligent automation to build the next generation of software."
-  ],
-
-  stats: [
-    {
-      value: "1+",
-      label: "Years Experience",
-    },
-    {
-      value: "15+",
-      label: "Projects Built",
-    },
-    {
-      value: "20+",
-      label: "Technologies Used",
-    },
-    {
-      value: "AI",
-      label: "Engineering Focus",
-    },
-  ],
-
-  name: "HIMESHCHANCHAL BHATTARAI",
-
-  email: "code.himesh@gmail.com",
-
-  location: "Kathmandu, Nepal",
-
-  availability: "Open to Full-Time Opportunities",
-
-  portrait: "/WhatsApp Image 2025-12-01 at 7.49.26 PM (1).jpeg",
-};
+  const aboutContent = {
+    headline: data?.headline || "",
+    paragraphs: data?.paragraphs || [],
+    stats: data?.stats || [],
+    name: data?.name || "",
+    email: data?.email || "",
+    location: data?.location || "",
+    availability: data?.availability || "",
+    portrait: data?.portrait || "",
+  };
   return (
-    <section id="about" className="px-6 py-20 border-b border-[--line] bg-[--panel] text-[--page-fg]">
-      <div className="max-w-6xl mx-auto grid gap-10 md:grid-cols-[1.1fr_0.9fr] items-start">
+    <section id="about" className="px-6 lg:px-12 xl:px-16 py-20 border-b border-[--line] bg-[--panel] text-[--page-fg]">
+      <div className="max-w-[1440px] mx-auto grid gap-10 md:grid-cols-[1.1fr_0.9fr] items-start">
         <div className="space-y-6">
           <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[--line] bg-[--chip-bg] px-3 py-1 text-xs font-mono text-[--muted]">
             About Me

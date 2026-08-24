@@ -22,8 +22,8 @@ const nowContent = {
 
 export default function NowPage() {
   return (
-    <article className="px-6 py-16 text-[--page-fg]">
-      <div className="mx-auto max-w-2xl space-y-10">
+    <article className="px-6 lg:px-12 py-16 text-[--page-fg]">
+      <div className="mx-auto max-w-3xl space-y-10">
         <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-mono text-[--muted]">
           <Link href="/" className="hover:text-[--page-fg] transition-colors">Home</Link>
           <span>/</span>

@@ -216,11 +216,38 @@ const ContactSchema = new Schema(
 );
 
 /* -------------------------------------------------------------------------- */
+/*                          Navbar / Footer Schema                            */
+/* -------------------------------------------------------------------------- */
+
+const NavbarSchema = new Schema(
+  {
+    brandImage: String,
+    brandName: String,
+    links: [String],
+  },
+  { _id: false }
+);
+
+const FooterSchema = new Schema(
+  {
+    brandImage: String,
+    brandName: String,
+    tagLine: String,
+    quickLinks: [String],
+    socialLinks: [SocialLinkSchema],
+    copyright: String,
+  },
+  { _id: false }
+);
+
+/* -------------------------------------------------------------------------- */
 /*                              Root Content                                  */
 /* -------------------------------------------------------------------------- */
 
 const ContentSchema = new Schema(
   {
+    navbar: NavbarSchema,
+
     hero: HeroSchema,
 
     about: AboutSchema,
@@ -232,6 +259,8 @@ const ContentSchema = new Schema(
     projects: [ProjectSchema],
 
     contact: ContactSchema,
+
+    footer: FooterSchema,
   },
   {
     timestamps: true,
